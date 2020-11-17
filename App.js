@@ -4,6 +4,9 @@ import {AppLoading} from 'expo';
 import {Asset} from 'expo-asset';
 import * as Font from 'expo-font';
 import {Ionicons} from '@expo/vector-icons';
+import {NavigationContainer} from '@react-navigation/native';
+
+import ListStack from "./navigation/ListStack";
 
 const cacheImages = images =>
     images.map(image => {
@@ -32,9 +35,9 @@ const App = () => {
   const onFinish = () => setIsReady(true)
 
     return isReady ? (
-        <View>
-          <Text>12341234</Text>
-        </View>
+        <NavigationContainer>
+            <ListStack />
+        </NavigationContainer>
     ) : (
         <AppLoading
           startAsync={loadAssets}
