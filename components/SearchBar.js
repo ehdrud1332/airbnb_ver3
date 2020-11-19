@@ -30,6 +30,19 @@ const Placeholder = styled.Text`
   margin-left: 10px;
 `;
 
+const InputArea = styled.View`
+  flex-direction: row;
+  align-items: center;
+  width: 80%;
+  border: 1px solid ${Colors.lightgray};
+  border-radius: 25px;
+  padding: 10px;
+`;
+
+const Input= styled.TextInput`
+  margin-left: 10px;
+`;
+
 export const SearchTab = ({setSearch, size, icon, placeholder}) => {
     return (
         <Container>
@@ -42,5 +55,15 @@ export const SearchTab = ({setSearch, size, icon, placeholder}) => {
                 </SearchArea>
             </TouchableOpacity>
         </Container>
+    );
+};
+
+export const SearchInput = ({...otherProps}) => {
+    return (
+        <InputArea>
+            <EvilIcons name='search' size={20} color={Colors.black}/>
+            <Input autoFocus={true} {...otherProps}/>
+        </InputArea>
     )
 }
+
