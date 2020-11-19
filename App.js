@@ -7,6 +7,7 @@ import {Ionicons} from '@expo/vector-icons';
 import {NavigationContainer} from '@react-navigation/native';
 
 import ListStack from "./navigation/ListStack";
+import navigationTheme from './navigation/navigationTheme';
 
 const cacheImages = images =>
     images.map(image => {
@@ -35,7 +36,7 @@ const App = () => {
   const onFinish = () => setIsReady(true)
 
     return isReady ? (
-        <NavigationContainer>
+        <NavigationContainer theme={navigationTheme}>
             <ListStack />
         </NavigationContainer>
     ) : (
